@@ -1,17 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const Hello = (props) => {
+  return(
+    <div>
+      <p>Hello world {props.name} you are {props.age} years old</p>
+    </div>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  const name = "Ricardo"
+  const age = 20
+
+  return(
+    <>
+      <h1>Greetings</h1>
+      <Hello name='Luisa' age={26 + 10} />
+      <Hello name={name} age={age} />
+    </>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
